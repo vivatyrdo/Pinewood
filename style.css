@@ -1,0 +1,1524 @@
+/* ================= БАЗОВЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ ================= */
+:root {
+    --bg-color: #F1EFE9; /* Бежевый фон как на макете */
+    --text-main: #333634; /* Темно-серый текст */
+    --text-green: #839F7F; /* Приглушенный зеленый акцентный цвет */
+    --font-main: 'Montserrat', sans-serif;
+    
+    /* Точная ширина контейнера для правильных отступов по бокам */
+    --container-width: 1340px; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--font-main);
+    color: var(--text-main);
+    line-height: 1.2;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Ограничитель контента по центру */
+.wrapper {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ================= HEADER (ШАПКА) ================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.logo img {
+    height: 40px; 
+    min-width: 140px;
+    object-fit: contain;
+}
+
+.nav__list {
+    display: flex;
+    gap: 40px;
+}
+
+.nav__link {
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+    color: var(--text-green);
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.phone__icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* ================= HERO SECTION (ГЛАВНЫЙ ЭКРАН) ================= */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0 100px 0;
+}
+
+/* --- Левая колонка (Текст и кнопки) --- */
+.hero__content {
+    width: 45%; /* Четкая ширина левого блока */
+    max-width: 500px;
+}
+
+.hero__title {
+    font-size: clamp(32px, 4vw, 44px); /* Адаптивный шрифт, не слишком огромный */
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.text-green {
+    color: var(--text-green);
+}
+
+.hero__subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 45px;
+    line-height: 1.5;
+    color: #555555;
+}
+
+.hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Кнопки без теней, матовые, как на макете */
+.btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--text-green);
+    color: white;
+    font-family: var(--font-main);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 18px 32px;
+    border-radius: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    background-color: #718c6e;
+}
+
+.btn-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    background-color: var(--text-green);
+    border-radius: 50%;
+}
+
+.btn-icon:hover {
+    background-color: #718c6e;
+}
+
+.btn-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- Правая колонка (Слайдер) --- */
+.hero__slider-wrapper {
+    position: relative;
+    width: 50%; /* Четкая ширина правого блока */
+    max-width: 550px;
+}
+
+/* РЕШЕНИЕ ПРОБЛЕМЫ С ВЫСОТОЙ */
+.hero-swiper {
+    width: 100%;
+    height: 420px; /* Жестко фиксируем высоту слайдера. Никаких бесконечных растягиваний. */
+    border-radius: 40px;
+    border: 2px solid var(--text-green); 
+    background-color: #dcdcdc; /* Серый фон, пока нет картинки */
+}
+
+/* Гарантируем, что слайд не сломает контейнер */
+.swiper-slide {
+    width: 100%;
+    height: 100%; 
+    display: block;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Кастомная стрелка слайдера */
+.custom-next {
+    position: absolute;
+    right: -60px; /* Выносим за пределы картинки */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50%;
+    border: 1px solid var(--text-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    background-color: transparent;
+}
+
+.custom-next:hover {
+    background-color: rgba(131, 159, 127, 0.1);
+}
+
+.custom-next img {
+    width: 14px;
+    height: 14px;
+}
+
+.custom-next::after {
+    display: none; /* Прячем стандартную стрелку свайпера */
+}
+
+/* ================= АДАПТИВНОСТЬ (Mobile & Tablet) ================= */
+
+/* Планшеты (до 992px) */
+@media (max-width: 992px) {
+    .header {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+    .nav {
+        order: 3;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    /* Перестраиваем блоки друг под друга */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 0;
+        gap: 50px;
+    }
+    
+    .hero__content, 
+    .hero__slider-wrapper {
+        width: 100%;
+        max-width: 600px;
+    }
+    
+    .hero__actions {
+        justify-content: center;
+    }
+    
+    .custom-next {
+        /* На планшетах и телефонах прячем стрелку, остается свайп пальцем */
+        display: none !important; 
+    }
+}
+
+/* Телефоны (до 576px) */
+@media (max-width: 576px) {
+    .nav__list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .hero__actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-primary {
+        width: 100%;
+    }
+    
+    .hero-swiper {
+        height: 300px; /* На телефонах делаем слайдер чуть ниже */
+        border-radius: 20px;
+    }
+}
+
+/* ================= PROCESS SECTION (ПРОЦЕСС РАБОТЫ) ================= */
+.process {
+    position: relative; /* Чтобы внутри можно было абсолютно позиционировать фон */
+    padding: 100px 0 120px 0;
+    background-color: var(--bg-color); /* Наследуем бежевый фон */
+}
+
+/* Фон с деревьями */
+.process__bg-trees {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none; /* Чтобы картинка не перехватывала клики/выделение текста */
+    opacity: 0.4;
+}
+
+/* Поднимаем контент над фоновыми деревьями */
+.process .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Шапка секции */
+.process__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 70px;
+    gap: 40px;
+}
+
+.process__title {
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 500px;
+}
+
+.process__subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555555;
+    line-height: 1.5;
+    max-width: 350px;
+    margin-top: 10px; /* Визуально выравниваем по высоте с заголовком */
+}
+
+/* Сетка с шагами (Grid) */
+.process__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки одинаковой ширины */
+    row-gap: 60px; /* Отступ между рядами */
+    column-gap: 50px; /* Отступ между колонками */
+}
+
+/* Отдельный шаг */
+.process__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.process__num {
+    font-size: 46px;
+    font-weight: 700;
+    color: var(--text-green);
+    line-height: 0.8; /* Прижимаем цифру, чтобы она не давала лишнего отступа сверху */
+}
+
+.process__text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.process__step-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.process__step-desc {
+    font-size: 14px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 1.45;
+}
+
+/* ================= АДАПТИВНОСТЬ ДЛЯ СЕКЦИИ ПРОЦЕССА ================= */
+
+/* Планшеты (до 992px) */
+@media (max-width: 992px) {
+    .process {
+        padding: 80px 0;
+    }
+    .process__header {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+    .process__subtitle {
+        max-width: 100%;
+        margin-top: 0;
+    }
+    .process__grid {
+        /* Перестраиваем в 2 колонки */
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 50px;
+        column-gap: 30px;
+    }
+}
+
+/* Телефоны (до 576px) */
+@media (max-width: 576px) {
+    .process {
+        padding: 60px 0;
+    }
+    .process__grid {
+        /* Перестраиваем в 1 колонку */
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+    }
+    .process__num {
+        font-size: 38px;
+    }
+}
+
+/* ================= PROJECTS SECTION (ВЫПОЛНЕННЫЕ ПРОЕКТЫ) ================= */
+.projects {
+    padding: 80px 0 100px 0;
+    background-color: var(--bg-color);
+}
+
+.projects__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    gap: 40px;
+}
+
+.projects__title {
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 550px;
+}
+
+.projects__subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555555;
+    line-height: 1.5;
+    max-width: 380px;
+    margin-top: 5px;
+}
+
+/* --- Слайдер --- */
+.projects__slider-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.projects-swiper {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 5px; /* Чтобы рамка карточек не обрезалась */
+}
+
+/* --- Карточка проекта --- */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--text-green);
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: transparent;
+    height: 100%; /* Чтобы карточки были одной высоты */
+}
+
+.project-card__img {
+    width: 100%;
+    height: 300px;
+}
+
+.project-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #dcdcdc; /* Заглушка до загрузки реальных фото */
+    display: block;
+}
+
+.project-card__content {
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1; /* Растягивает блок, если карточки разной высоты */
+}
+
+.project-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.project-card__info p {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Мини-кнопка в карточке */
+.project-card__btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #8CA488; /* Чуть более светлый зеленый для кнопки, как на макете */
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 14px 20px;
+    border-radius: 30px;
+    transition: background-color 0.2s ease;
+    white-space: nowrap; /* Чтобы текст не переносился */
+}
+
+.project-card__btn:hover {
+    background-color: #718c6e;
+}
+
+.project-card__btn img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+/* --- Стрелки слайдера проектов --- */
+.projects-prev,
+.projects-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50%;
+    border: 1px solid var(--text-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    background-color: var(--bg-color); /* Фон, чтобы стрелки перекрывали слайды, если наедут */
+    transition: background-color 0.2s;
+}
+
+.projects-prev {
+    left: -70px;
+}
+
+.projects-next {
+    right: -70px;
+}
+
+.projects-prev:hover,
+.projects-next:hover {
+    background-color: rgba(131, 159, 127, 0.1);
+}
+
+.projects-prev img,
+.projects-next img {
+    width: 14px;
+    height: 14px;
+}
+
+/* Убираем дефолтные стрелки свайпера */
+.projects-prev::after,
+.projects-next::after {
+    display: none;
+}
+
+/* --- Кнопка внизу --- */
+.projects__bottom {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* Новый стиль: Прозрачная кнопка с бордером */
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--text-green);
+    color: var(--text-main);
+    padding: 18px 40px;
+    border-radius: 40px;
+    font-family: var(--font-main);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.btn-outline:hover {
+    background-color: rgba(131, 159, 127, 0.1);
+}
+
+/* ================= АДАПТИВНОСТЬ ДЛЯ ПРОЕКТОВ ================= */
+
+/* Ноутбуки и планшеты (когда экран уже, прячем боковые стрелки, чтобы не сломать горизонтальный скролл) */
+@media (max-width: 1300px) {
+    .projects-prev,
+    .projects-next {
+        display: none !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .projects__header {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    .projects__subtitle {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card__content {
+        flex-direction: column;
+        align-items: flex-start; /* Выравниваем по левому краю */
+        gap: 15px;
+        padding: 20px;
+    }
+    .project-card__btn {
+        width: 100%;
+        justify-content: center; /* Центрируем текст в кнопке на мобилке */
+    }
+    .project-card__img {
+        height: 240px;
+    }
+}
+
+/* ================= SERVICES SECTION (УСЛУГИ) ================= */
+.services {
+    position: relative;
+    padding: 80px 0 100px 0;
+    background-color: var(--bg-color);
+}
+
+/* Фоновый узор слева */
+.services__bg-pattern {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 350px; /* Примерный размер, можно будет поправить после вставки SVG */
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.services .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.services__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    gap: 40px;
+}
+
+.services__title {
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.services__subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555555;
+    line-height: 1.5;
+    max-width: 380px;
+    margin-top: 5px;
+}
+
+/* --- Слайдер услуг --- */
+.services__slider-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.services-swiper {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 5px;
+}
+
+/* --- Карточка услуги --- */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--text-green);
+    border-radius: 20px;
+    padding: 8px; /* Тот самый отступ внутри карточки до картинки */
+    height: 100%; 
+    background-color: transparent;
+}
+
+.service-card__img {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px; /* Скругляем саму картинку внутри */
+    overflow: hidden;
+}
+
+.service-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #dcdcdc;
+    display: block;
+}
+
+.service-card__content {
+    padding: 20px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.service-card__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.service-card__desc {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666666;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Прижимает кнопку к низу, если текст разной длины */
+}
+
+.service-card__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%; /* Кнопка на всю ширину внутри карточки */
+    background-color: #8CA488;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 14px 20px;
+    border-radius: 30px;
+    transition: background-color 0.2s ease;
+}
+
+.service-card__btn:hover {
+    background-color: #718c6e;
+}
+
+.service-card__btn img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+/* --- Стрелки навигации --- */
+.services-prev,
+.services-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50%;
+    border: 1px solid var(--text-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    background-color: var(--bg-color);
+    transition: background-color 0.2s;
+}
+
+.services-prev {
+    left: -70px;
+}
+
+.services-next {
+    right: -70px;
+}
+
+.services-prev:hover,
+.services-next:hover {
+    background-color: rgba(131, 159, 127, 0.1);
+}
+
+.services-prev img,
+.services-next img {
+    width: 14px;
+    height: 14px;
+}
+
+.services-prev::after,
+.services-next::after {
+    display: none;
+}
+
+/* --- Кнопка внизу --- */
+.services__bottom {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* ================= АДАПТИВНОСТЬ ================= */
+
+@media (max-width: 1300px) {
+    /* Прячем боковые стрелки на узких экранах (оставляем свайп) */
+    .services-prev,
+    .services-next {
+        display: none !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .services__header {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    .services__subtitle {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .services {
+        padding: 60px 0 80px 0;
+    }
+}
+
+/* ================= QUIZ SECTION (ОПРОСНИК) ================= */
+.quiz {
+    position: relative;
+    padding: 100px 0;
+    background-color: var(--bg-color);
+}
+
+/* Фоновые SVG кольца дерева */
+.quiz__bg {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.7; /* Регулируйте прозрачность фона тут */
+}
+.quiz__bg-left {
+    top: 50px;
+    left: 0;
+    width: 300px;
+}
+.quiz__bg-right {
+    bottom: 50px;
+    right: 0;
+    width: 300px;
+}
+
+.quiz .wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.quiz__title {
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 50px;
+}
+
+/* Коробка квиза */
+.quiz__box {
+    display: flex;
+    border: 1px solid var(--text-green);
+    background-color: transparent; /* Внутри такой же бежевый цвет как снаружи */
+    border-radius: 4px; /* Легкое скругление углов, почти острые */
+}
+
+/* Левая часть квиза */
+.quiz__main {
+    flex: 1;
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz__counter {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Механика скрытия/показа шагов */
+.quiz__steps-container {
+    flex-grow: 1;
+}
+
+.quiz__step {
+    display: none; /* Скрыты по умолчанию */
+}
+
+.quiz__step.active {
+    display: block; /* Показывается активный */
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.quiz__question {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--text-main);
+}
+
+.quiz__step-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Инпут площади дома */
+.quiz__input {
+    padding: 15px 30px;
+    border: 1px solid #c8d1c6;
+    border-radius: 30px;
+    background: transparent;
+    font-family: var(--font-main);
+    font-size: 14px;
+    color: var(--text-main);
+    outline: none;
+    width: 200px;
+}
+
+.quiz__input:focus {
+    border-color: var(--text-green);
+}
+
+.quiz__step-img {
+    width: 250px;
+}
+.quiz__step-img img {
+    width: 140%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Кнопки Навигации (Назад / Далее) */
+.quiz__actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.quiz__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: var(--font-main);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 16px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quiz__btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.quiz__btn img {
+    width: 14px;
+    height: 14px;
+}
+
+.quiz__btn--prev {
+    background-color: transparent;
+    border: 1px solid var(--text-main);
+    color: var(--text-main);
+}
+
+.quiz__btn--prev:not(:disabled):hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.quiz__btn--next {
+    background-color: #8CA488;
+    border: 1px solid #8CA488;
+    color: white;
+}
+
+.quiz__btn--next:hover {
+    background-color: #718c6e;
+}
+
+/* Правая часть квиза (Сайдбар) */
+.quiz__sidebar {
+    width: 380px; /* Фиксированная ширина */
+    border-left: 1px solid var(--text-green);
+    padding: 50px 40px;
+}
+
+.expert {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.expert__photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #dcdcdc;
+}
+
+.expert__name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.expert__role {
+    font-size: 13px;
+    font-weight: 600;
+    color: #666;
+}
+
+.expert__quote {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.benefits__title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.benefits__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.benefits__list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.benefit__icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--text-green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.benefit__icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.benefits__list p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #333;
+}
+
+
+/* ================= FOOTER (ПОДВАЛ) ================= */
+.footer {
+    border-top: 1px solid var(--text-green);
+    padding: 60px 0;
+    background-color: var(--bg-color);
+}
+
+.footer__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer__col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__logo img {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.footer__desc {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.footer__legal {
+    font-size: 11px;
+    color: #888;
+    line-height: 1.6;
+}
+
+.footer__col--nav {
+    flex-direction: row;
+    justify-content: center; /* Центрируем навигацию в подвале */
+    gap: 60px;
+}
+
+.footer__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer__nav-list a {
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer__nav-list a:hover {
+    color: var(--text-green);
+}
+
+.footer__col--contacts {
+    gap: 15px;
+    margin-left: auto;
+}
+
+.footer__contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer__contact-item img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.footer__contact-item.align-top {
+    align-items: flex-start;
+}
+.footer__contact-item.align-top p {
+    line-height: 1.5;
+}
+
+
+/* ================= АДАПТИВНОСТЬ ================= */
+
+@media (max-width: 992px) {
+    /* Квиз */
+    .quiz__box {
+        flex-direction: column;
+    }
+    .quiz__sidebar {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid var(--text-green);
+        padding: 40px;
+    }
+    .quiz__step-content {
+        flex-direction: column;
+    }
+    
+    /* Футер */
+    .footer__inner {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 50px;
+    }
+    .footer__col--contacts {
+        align-items: flex-start;
+        grid-column: span 2; /* Контакты переезжают вниз на всю ширину */
+    }
+}
+
+@media (max-width: 576px) {
+    .quiz__main {
+        padding: 30px 20px;
+    }
+    .quiz__sidebar {
+        padding: 30px 20px;
+    }
+    .quiz__actions {
+        flex-direction: column;
+    }
+    .quiz__btn {
+        width: 100%;
+    }
+    
+    .footer__inner {
+        grid-template-columns: 1fr;
+    }
+    .footer__col--nav {
+        justify-content: flex-start;
+    }
+    .footer__col--contacts {
+        grid-column: span 1;
+    }
+
+    .quiz__step-img img{
+        width: 100%;
+    }
+}
+
+/* ================= КВИЗ: ШАГ 2 (МАТЕРИАЛЫ) ================= */
+
+.quiz__materials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    gap: 30px 40px; /* Отступы между карточками */
+    width: 100%;
+}
+
+.quiz__material {
+    display: block;
+    cursor: pointer;
+}
+
+/* Скрываем стандартный кружочек радиокнопки */
+.quiz__material-input {
+    display: none; 
+}
+
+.quiz__material-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.quiz__material-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #dcdcdc;
+    border: 2px solid transparent; /* Подготавливаем рамку для активного состояния */
+    transition: all 0.2s ease;
+}
+
+.quiz__material-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.quiz__material-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: #444;
+    line-height: 1.3;
+}
+
+/* Когда карточка выбрана (нажата) - показываем зеленую рамку */
+.quiz__material-input:checked + .quiz__material-card .quiz__material-img {
+    border-color: var(--text-green);
+    box-shadow: 0 4px 15px rgba(131, 159, 127, 0.3);
+}
+
+/* Поле "Свой вариант" */
+.quiz__material--custom {
+    display: flex;
+    align-items: center;
+    cursor: default;
+}
+
+.quiz__input--custom {
+    width: 100%;
+    padding: 15px 20px;
+}
+
+/* Адаптив для карточек материалов */
+@media (max-width: 1200px) {
+    .quiz__materials {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .quiz__materials {
+        grid-template-columns: repeat(2, 1fr); /* На мобильных делаем 2 колонки */
+        gap: 20px 15px;
+    }
+    .quiz__material-img {
+        width: 100%;
+        height: 100px;
+    }
+}
+
+@media (max-width: 386px) {
+    .quiz__materials {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px 15px;
+    }
+}
+
+/* ================= КВИЗ: НОВЫЕ СТИЛИ ================= */
+
+/* --- Шаг 3: Большие опции с иконками --- */
+.quiz__options-row {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+.quiz__option-big {
+    cursor: pointer;
+    flex: 1;
+}
+
+.quiz__option-input {
+    display: none; /* Скрываем стандартную точку/галочку */
+}
+
+.quiz__option-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.quiz__check-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz__check-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.quiz__option-text {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Эффект при выборе (можно подсветить текст или иконку) */
+.quiz__option-input:checked + .quiz__option-box .quiz__option-text {
+    color: var(--text-green);
+    font-weight: 700;
+}
+
+/* --- Шаг 4 и 5: Квадратные чекбоксы --- */
+.quiz__grid-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    gap: 20px 40px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.quiz__option-square {
+    cursor: pointer;
+}
+
+.quiz__square-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Кастомный квадратик для галочки */
+.quiz__mini-check {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ccc; /* Серый бордюр по умолчанию */
+    background-color: transparent;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+/* При выборе меняем стиль квадратика */
+.quiz__option-input:checked + .quiz__square-box .quiz__mini-check {
+    border-color: var(--text-green);
+    background-color: var(--text-green);
+    background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6L4.5 9.5L11 2.5" stroke="white" stroke-width="2"/></svg>'); /* Галочка CSS */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.quiz__option-square span {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+/* Поле ввода для своего варианта в сетке */
+.quiz__square-input {
+    display: flex;
+    align-items: center;
+}
+.quiz__input--wide {
+    width: 100%;
+    padding: 12px 20px;
+}
+
+/* --- Шаг 6: Контакты --- */
+.quiz__lead-text {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.quiz__contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.quiz__inputs-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.quiz__input--contact {
+    width: 100%;
+    background-color: white; /* Белый фон для полей ввода */
+}
+
+/* Большая кнопка отправки */
+.quiz__submit-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 60px;
+    font-size: 14px;
+    border-radius: 40px;
+}
+
+.quiz__submit-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- Шаг 7: Успех --- */
+.quiz__success-desc {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.quiz__btn-reset {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    border: 1px solid var(--text-main);
+    border-radius: 30px;
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-size: 13px;
+    font-weight: 600;
+}
+.quiz__btn-reset:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+/* Адаптив для квиза */
+@media (max-width: 576px) {
+    .quiz__grid-4 {
+        grid-template-columns: 1fr; /* 1 колонка на мобилке */
+        gap: 15px;
+    }
+    .quiz__inputs-row {
+        flex-direction: column;
+    }
+    .quiz__submit-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .quiz__options-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

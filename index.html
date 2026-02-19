@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinewood Homes</title>
+    
+    <!-- Подключение шрифта Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Подключение стилей Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- Наши стили -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Шапка сайта -->
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="Логотип Pinewood Homes">
+            </a>
+            
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="#" class="nav__link">Проекты</a></li>
+                    <li><a href="#" class="nav__link">Услуги</a></li>
+                    <li><a href="#" class="nav__link">Цены</a></li>
+                    <li><a href="#" class="nav__link">О нас</a></li>
+                    <li><a href="#" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <a href="tel:+77777777777" class="phone">
+                <img src="images/Path 76.svg" alt="Иконка телефона" class="phone__icon">
+                +7 777 777 77 77
+            </a>
+        </header>
+
+        <!-- Главный экран -->
+        <main class="hero">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    Отделка <br>
+                    <span class="text-green">деревянных домов</span><br>
+                    в Москве и области
+                </h1>
+                <p class="hero__subtitle">
+                    с оптимизацией сметы до 30%<br>
+                    и гарантией до 15 лет
+                </p>
+                
+                <div class="hero__actions">
+                    <button class="btn btn-primary">РАССЧИТАТЬ СТОИМОСТЬ РАБОТ</button>
+                    <a href="#" class="btn btn-icon">
+                        <img src="images/instagram.svg" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero__slider-wrapper">
+                <!-- Swiper -->
+                <div class="swiper hero-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Слайд 1 -->
+                        <div class="swiper-slide">
+                            <img src="images/swiper.png" alt="Интерьер деревянного дома">
+                        </div>
+                        <!-- Слайд 2 (Для примера свайпа) -->
+                        <div class="swiper-slide">
+                            <img src="images/swiper.png" alt="Интерьер 2">
+                        </div>
+                        <!-- Слайд 3 -->
+                        <div class="swiper-slide">
+                            <img src="images/swiper.png" alt="Интерьер 3">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Кастомная кнопка навигации Swiper -->
+                <div class="swiper-button-next custom-next">
+                    <img src="images/arrow-right.svg" alt="Стрелка вправо">
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Секция: Процесс работы -->
+    <section class="process">
+        <!-- Пустой тег для вашего SVG с деревьями -->
+        <img src="images/Group.svg" alt="Фон деревья" class="process__bg-trees">
+
+        <div class="wrapper">
+            <div class="process__header">
+                <h2 class="process__title">
+                    Прозрачный и понятный <br>
+                    процесс работы
+                </h2>
+                <p class="process__subtitle">
+                    Вы будете получать фото и видео <br>
+                    отчеты на всем протяжении работы
+                </p>
+            </div>
+
+            <div class="process__grid">
+                <!-- Шаг 1 -->
+                <div class="process__item">
+                    <span class="process__num">1</span>
+                    <div class="process__text">
+                        <h3 class="process__step-title">Заявка</h3>
+                        <p class="process__step-desc">Вы оставляете заявку на сайте или звоните нам по телефону</p>
+                    </div>
+                </div>
+
+                <!-- Шаг 2 -->
+                <div class="process__item">
+                    <span class="process__num">2</span>
+                    <div class="process__text">
+                        <h3 class="process__step-title">Выезд на объект</h3>
+                        <p class="process__step-desc">В удобное для вас время специалист приезжает на объект для замера и просчета</p>
+                    </div>
+                </div>
+
+                <!-- Шаг 3 -->
+                <div class="process__item">
+                    <span class="process__num">3</span>
+                    <div class="process__text">
+                        <h3 class="process__step-title">Согласование сметы</h3>
+                        <p class="process__step-desc">Перед началом работ вы знаете точную стоимость и сроки всех услуг</p>
+                    </div>
+                </div>
+
+                <!-- Шаг 4 -->
+                <div class="process__item">
+                    <span class="process__num">4</span>
+                    <div class="process__text">
+                        <h3 class="process__step-title">Заключение договора</h3>
+                        <p class="process__step-desc">Вы заключаете официальный договор, где прописаны все наши обязательства</p>
+                    </div>
+                </div>
+
+                <!-- Шаг 5 -->
+                <div class="process__item">
+                    <span class="process__num">5</span>
+                    <div class="process__text">
+                        <h3 class="process__step-title">Процесс работы</h3>
+                        <p class="process__step-desc">Мы выполняем работы, присылаем отчеты, а вы частями оплачиваете каждый принятый этап</p>
+                    </div>
+                </div>
+
+                <!-- Шаг 6 -->
+                <div class="process__item">
+                    <span class="process__num">6</span>
+                    <div class="process__text">
+                        <h3 class="process__step-title">Сдача проекта</h3>
+                        <p class="process__step-desc">Все работы проверяет отдел по контролю качества и только после этого вы принимаете объект</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: Выполненные проекты -->
+    <section class="projects">
+        <div class="wrapper">
+            
+            <!-- Шапка секции -->
+            <div class="projects__header">
+                <h2 class="projects__title">
+                    Более <span class="text-green">130 выполненных проектов</span><br>
+                    по всей Москве и области
+                </h2>
+                <p class="projects__subtitle">
+                    По предварительной записи, Вы можете<br>
+                    посетить объект, который уже готов<br>
+                    или находится в процессе отделки
+                </p>
+            </div>
+
+            <!-- Слайдер проектов -->
+            <div class="projects__slider-wrap">
+                
+                <div class="swiper projects-swiper">
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Карточка 1 -->
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-card__img">
+                                    <img src="images/swiper.png" alt="Проект КП Золотые сосны">
+                                </div>
+                                <div class="project-card__content">
+                                    <div class="project-card__info">
+                                        <p>КП Золотые сосны 290</p>
+                                    </div>
+                                    <a href="#" class="project-card__btn">
+                                        Смотреть проект
+                                        <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Карточка 2 -->
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-card__img">
+                                    <img src="images/swiper2.png" alt="Проект баня">
+                                </div>
+                                <div class="project-card__content">
+                                    <div class="project-card__info">
+                                        <p>КП Золотые сосны 290</p>
+                                        <p>Название проекта</p>
+                                    </div>
+                                    <a href="#" class="project-card__btn">
+                                        Смотреть проект
+                                        <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Карточка 3 (Для демонстрации свайпа) -->
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-card__img">
+                                    <img src="images/swiper.png" alt="Проект 3">
+                                </div>
+                                <div class="project-card__content">
+                                    <div class="project-card__info">
+                                        <p>КП Серебряный бор</p>
+                                    </div>
+                                    <a href="#" class="project-card__btn">
+                                        Смотреть проект
+                                        <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Стрелки навигации для проектов -->
+                <div class="swiper-button-prev projects-prev">
+                    <img src="images/arrow_forward_ios_24px.svg" alt="Влево">
+                </div>
+                <div class="swiper-button-next projects-next">
+                    <img src="images/arrow-right.svg" alt="Вправо">
+                </div>
+
+            </div>
+
+            <!-- Кнопка под слайдером -->
+            <div class="projects__bottom">
+                <button class="btn btn-outline">Смотреть все проекты</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Секция: Услуги -->
+    <section class="services">
+        <!-- Пустой тег для фонового узора (линии слева внизу) -->
+        
+        <div class="wrapper">
+            <!-- Шапка секции -->
+            <div class="services__header">
+                <h2 class="services__title">
+                    Предоставляем <br>
+                    <span class="text-green">широкий спектр услуг</span>
+                </h2>
+                <p class="services__subtitle">
+                    Несем ответственность <br>
+                    и предоставляем гарантию, <br>
+                    прописанную в официальном договоре
+                </p>
+            </div>
+
+            <!-- Слайдер услуг -->
+            <div class="services__slider-wrap">
+                <div class="swiper services-swiper">
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Карточка услуги 1 -->
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-card__img">
+                                    <img src="images/swiper3.png" alt="Шлифовка">
+                                </div>
+                                <div class="service-card__content">
+                                    <h3 class="service-card__title">Шлифовка</h3>
+                                    <p class="service-card__desc">Подготовка дома к покраске и увеличение срока службы каркаса</p>
+                                    <a href="#" class="service-card__btn">
+                                        Оставить заявку
+                                        <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Карточка услуги 2 -->
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-card__img">
+                                    <img src="images/swiper3.png" alt="Шлифовка">
+                                </div>
+                                <div class="service-card__content">
+                                    <h3 class="service-card__title">Шлифовка</h3>
+                                    <p class="service-card__desc">Подготовка дома к покраске и увеличение срока службы каркаса</p>
+                                    <a href="#" class="service-card__btn">
+                                        Оставить заявку
+                                        <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Карточка услуги 3 -->
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-card__img">
+                                    <img src="images/swiper3.png" alt="Шлифовка">
+                                </div>
+                                <div class="service-card__content">
+                                    <h3 class="service-card__title">Шлифовка</h3>
+                                    <p class="service-card__desc">Подготовка дома к покраске и увеличение срока службы каркаса</p>
+                                    <a href="#" class="service-card__btn">
+                                        Оставить заявку
+                                        <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Карточка услуги 4 -->
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-card__img">
+                                    <img src="images/swiper3.png" alt="Шлифовка">
+                                </div>
+                                <div class="service-card__content">
+                                    <h3 class="service-card__title">Шлифовка</h3>
+                                    <p class="service-card__desc">Подготовка дома к покраске и увеличение срока службы каркаса</p>
+                                    <a href="#" class="service-card__btn">
+                                        Оставить заявку
+                                        <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Карточка услуги 5 (Добавлена для наглядности скролла) -->
+                        <div class="swiper-slide">
+                            <div class="service-card">
+                                <div class="service-card__img">
+                                    <img src="images/swiper3.png" alt="Шлифовка">
+                                </div>
+                                <div class="service-card__content">
+                                    <h3 class="service-card__title">Покраска</h3>
+                                    <p class="service-card__desc">Профессиональная покраска деревянных фасадов с гарантией</p>
+                                    <a href="#" class="service-card__btn">
+                                        Оставить заявку
+                                        <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Стрелки навигации -->
+                <div class="swiper-button-prev services-prev">
+                    <img src="images/arrow_forward_ios_24px.svg" alt="Влево">
+                </div>
+                <div class="swiper-button-next services-next">
+                    <img src="images/arrow-right.svg" alt="Вправо">
+                </div>
+            </div>
+
+            <!-- Кнопка под слайдером (переиспользуем класс .btn-outline) -->
+            <div class="services__bottom">
+                <button class="btn btn-outline">Смотреть все услуги</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: Квиз (Опросник) -->
+    <section class="quiz">
+        <!-- Фоновые SVG деревьев (абсолютное позиционирование) -->
+        <img src="images/Frame1.svg" alt="Фон дерево лево" class="quiz__bg quiz__bg-left">
+        <img src="images/Frame2.svg" alt="Фон дерево право" class="quiz__bg quiz__bg-right">
+
+        <div class="wrapper">
+            <h2 class="quiz__title">
+                Ответьте на <span class="text-green">5 простых вопросов</span><br>
+                и получите расчеты по вашему объекту
+            </h2>
+
+            <!-- Контейнер с обводкой -->
+            <div class="quiz__box">
+                
+                <!-- ЛЕВАЯ ЧАСТЬ (Меняется) -->
+                <div class="quiz__main">
+                    <p class="quiz__counter">Вопрос <span id="current-step">1</span> / 5</p>
+
+                   <div class="quiz__steps-container">
+                        
+                        <!-- ШАГ 1: Площадь -->
+                        <div class="quiz__step active" data-step="1">
+                            <h3 class="quiz__question">Укажите площадь дома:</h3>
+                            <div class="quiz__step-content">
+                                <div class="quiz__input-wrap">
+                                    <input type="text" placeholder="500 м²" class="quiz__input">
+                                </div>
+                                <div class="quiz__step-img">
+                                    <img src="images/scheme.png" alt="План дома">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ШАГ 2: Материал -->
+                        <div class="quiz__step" data-step="2">
+                            <h3 class="quiz__question">Укажите материал дома:</h3>
+                            <div class="quiz__step-content">
+                                <div class="quiz__materials">
+                                    <label class="quiz__material">
+                                        <input type="radio" name="material" value="Клееный брус" class="quiz__material-input">
+                                        <div class="quiz__material-card">
+                                            <div class="quiz__material-img"><img src="images/question21.png" alt="Брус"></div>
+                                            <span class="quiz__material-text">Клееный брус</span>
+                                        </div>
+                                    </label>
+                                    <label class="quiz__material">
+                                        <input type="radio" name="material" value="Профилированный брус" class="quiz__material-input">
+                                        <div class="quiz__material-card">
+                                            <div class="quiz__material-img"><img src="images/question22.png" alt="Брус"></div>
+                                            <span class="quiz__material-text">Профилированный<br>брус</span>
+                                        </div>
+                                    </label>
+                                    <label class="quiz__material">
+                                        <input type="radio" name="material" value="Оцилиндрованное бревно" class="quiz__material-input">
+                                        <div class="quiz__material-card">
+                                            <div class="quiz__material-img"><img src="images/question23.png" alt="Бревно"></div>
+                                            <span class="quiz__material-text">Оцилиндрованное<br>бревно</span>
+                                        </div>
+                                    </label>
+                                    <label class="quiz__material">
+                                        <input type="radio" name="material" value="Лафет" class="quiz__material-input">
+                                        <div class="quiz__material-card">
+                                            <div class="quiz__material-img"><img src="images/question24.png" alt="Лафет"></div>
+                                            <span class="quiz__material-text">Лафет</span>
+                                        </div>
+                                    </label>
+                                    <label class="quiz__material">
+                                        <input type="radio" name="material" value="Рубленное бревно" class="quiz__material-input">
+                                        <div class="quiz__material-card">
+                                            <div class="quiz__material-img"><img src="images/question25.png" alt="Бревно"></div>
+                                            <span class="quiz__material-text">Рубленное бревно</span>
+                                        </div>
+                                    </label>
+                                    <div class="quiz__material quiz__material--custom">
+                                        <input type="text" placeholder="Свой вариант" class="quiz__input quiz__input--custom">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ШАГ 3: Смета (Да/Нет) -->
+                        <div class="quiz__step" data-step="3">
+                            <h3 class="quiz__question">Есть ли у вас смета на внутреннюю отделку?</h3>
+                            <div class="quiz__step-content">
+                                <div class="quiz__options-row">
+                                    <label class="quiz__option-big">
+                                        <input type="radio" name="estimate" value="Да" class="quiz__option-input">
+                                        <div class="quiz__option-box">
+                                            <div class="quiz__check-icon">
+                                                
+                                            </div>
+                                            <span class="quiz__option-text">Да, смета есть</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="quiz__option-big">
+                                        <input type="radio" name="estimate" value="Нет" class="quiz__option-input">
+                                        <div class="quiz__option-box">
+                                            <div class="quiz__check-icon">
+                                                
+                                            </div>
+                                            <span class="quiz__option-text">У меня нет сметы</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ШАГ 4: Сроки -->
+                        <div class="quiz__step" data-step="4">
+                            <h3 class="quiz__question">Когда планируете начать работы по внутренней отделке?</h3>
+                            <div class="quiz__step-content">
+                                <div class="quiz__grid-4">
+                                    <label class="quiz__option-square">
+                                        <input type="radio" name="timing" value="Быстро" class="quiz__option-input">
+                                        <div class="quiz__square-box">
+                                            <div class="quiz__mini-check"></div>
+                                            <span>Как можно быстрее</span>
+                                        </div>
+                                    </label>
+                                    <label class="quiz__option-square">
+                                        <input type="radio" name="timing" value="В этом году" class="quiz__option-input">
+                                        <div class="quiz__square-box">
+                                            <div class="quiz__mini-check"></div>
+                                            <span>В течение этого года</span>
+                                        </div>
+                                    </label>
+                                    <label class="quiz__option-square">
+                                        <input type="radio" name="timing" value="Месяц" class="quiz__option-input">
+                                        <div class="quiz__square-box">
+                                            <div class="quiz__mini-check"></div>
+                                            <span>В течение месяца</span>
+                                        </div>
+                                    </label>
+                                    <label class="quiz__option-square">
+                                        <input type="radio" name="timing" value="Нет плана" class="quiz__option-input">
+                                        <div class="quiz__square-box">
+                                            <div class="quiz__mini-check"></div>
+                                            <span>Пока нет точного плана</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ШАГ 5: Виды работ (Чекбоксы - можно выбрать много) -->
+                        <div class="quiz__step" data-step="5">
+                            <!-- Исправил заголовок по смыслу контента -->
+                            <h3 class="quiz__question">Какие работы необходимо выполнить?</h3>
+                            <div class="quiz__step-content">
+                                <div class="quiz__grid-4">
+                                    <label class="quiz__option-square">
+                                        <input type="checkbox" name="works" value="Шлифовка" class="quiz__option-input">
+                                        <div class="quiz__square-box">
+                                            <div class="quiz__mini-check"></div>
+                                            <span>Шлифовка и покраска</span>
+                                        </div>
+                                    </label>
+                                    <label class="quiz__option-square">
+                                        <input type="checkbox" name="works" value="Плитка" class="quiz__option-input">
+                                        <div class="quiz__square-box">
+                                            <div class="quiz__mini-check"></div>
+                                            <span>Плиточные работы</span>
+                                        </div>
+                                    </label>
+                                    <label class="quiz__option-square">
+                                        <input type="checkbox" name="works" value="Потолки" class="quiz__option-input">
+                                        <div class="quiz__square-box">
+                                            <div class="quiz__mini-check"></div>
+                                            <span>Отделка потолков,<br>пола и стен</span>
+                                        </div>
+                                    </label>
+                                    <label class="quiz__option-square">
+                                        <input type="checkbox" name="works" value="Двери" class="quiz__option-input">
+                                        <div class="quiz__square-box">
+                                            <div class="quiz__mini-check"></div>
+                                            <span>Установка дверей и окон</span>
+                                        </div>
+                                    </label>
+                                    <label class="quiz__option-square">
+                                        <input type="checkbox" name="works" value="Инженерка" class="quiz__option-input">
+                                        <div class="quiz__square-box">
+                                            <div class="quiz__mini-check"></div>
+                                            <span>Прокладка инженерных систем</span>
+                                        </div>
+                                    </label>
+                                    <label class="quiz__option-square">
+                                        <input type="checkbox" name="works" value="Сантехника" class="quiz__option-input">
+                                        <div class="quiz__square-box">
+                                            <div class="quiz__mini-check"></div>
+                                            <span>Сантехнические услуги</span>
+                                        </div>
+                                    </label>
+                                    <label class="quiz__option-square">
+                                        <input type="checkbox" name="works" value="Под ключ" class="quiz__option-input">
+                                        <div class="quiz__square-box">
+                                            <div class="quiz__mini-check"></div>
+                                            <span>Все работы «под ключ»</span>
+                                        </div>
+                                    </label>
+                                    <!-- Свой вариант для чекбоксов -->
+                                    <div class="quiz__square-input">
+                                        <input type="text" placeholder="Свой вариант" class="quiz__input quiz__input--wide">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ШАГ 6: Контакты (Lead Form) -->
+                        <div class="quiz__step" data-step="contact">
+                            <p class="quiz__lead-text">Остался последний шаг</p>
+                            <h3 class="quiz__question">Получите оптимизацию сметы <br>и точный план всех работ</h3>
+                            
+                            <div class="quiz__contact-form">
+                                <div class="quiz__inputs-row">
+                                    <input type="tel" placeholder="Ваш телефон" class="quiz__input quiz__input--contact">
+                                    <input type="email" placeholder="Ваша почта" class="quiz__input quiz__input--contact">
+                                </div>
+                                <button class="btn btn-primary quiz__submit-btn" id="quiz-submit">
+                                    Получить расчет <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка">
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- ШАГ 7: Успех (Success) -->
+                        <div class="quiz__step" data-step="success">
+                            <p class="quiz__lead-text">Остался последний шаг</p> <!-- Можно убрать, если не нужно на финале -->
+                            <h3 class="quiz__question">Спасибо!</h3>
+                            <p class="quiz__success-desc">Наш менеджер свяжется с вами <br>в течении 15 минут</p>
+                            
+                            <button class="quiz__btn-reset" id="quiz-reset">
+                                <img src="images/Arrow-back.svg" alt="Назад"> Начать с начала
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- Кнопки Навигации Квиза -->
+                    <div class="quiz__actions">
+                        <button class="quiz__btn quiz__btn--prev" id="btn-prev" disabled>
+                            <img src="images/Arrow-back.svg" alt="Назад"> Назад
+                        </button>
+                        <button class="quiz__btn quiz__btn--next" id="btn-next">
+                            Далее <img src="images/Icon ionic-md-arrow-forward.svg" alt="Вперед">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ПРАВАЯ ЧАСТЬ (Статичная) -->
+                <div class="quiz__sidebar">
+                    <div class="expert">
+                        <img src="images/Иван.png" alt="Иванов Борис" class="expert__photo">
+                        <div class="expert__info">
+                            <p class="expert__name">Иванов Борис</p>
+                            <p class="expert__role">Инженер проектов</p>
+                        </div>
+                    </div>
+                    <p class="expert__quote">
+                        Здравствуйте, меня зовут Борис, и я помогу Вам 
+                        понять, какой бюджет нужен для отделки вашего 
+                        дома под ключ
+                    </p>
+
+                    <h4 class="benefits__title">Ответив на вопросы, Вы получите:</h4>
+                    <ul class="benefits__list">
+                        <li>
+                            <div class="benefit__icon"><img src="images/database.svg" alt="Иконка"></div>
+                            <p>Ориентировочную стоимость</p>
+                        </li>
+                        <li>
+                            <div class="benefit__icon"><img src="images/clipboard.svg" alt="Иконка"></div>
+                            <p>Точную подборку проектов, исходя из ваших ответов, либо предложим новый вариант</p>
+                        </li>
+                        <li>
+                            <div class="benefit__icon"><img src="images/gift.svg" alt="Иконка"></div>
+                            <p>Один из 3-х подарков при заказе отделки у нас</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: Подвал (Footer) -->
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__inner">
+                
+                <!-- Колонка 1: Логотип и Реквизиты -->
+                <div class="footer__col footer__col--brand">
+                    <a href="#" class="logo footer__logo">
+                        <img src="images/logo.png" alt="Логотип Pinewood Homes">
+                    </a>
+                    <p class="footer__desc">Отделка деревянных домов<br>в Москве и области</p>
+                    <div class="footer__legal">
+                        <p>ООО "Пинвуд Хоумс"</p>
+                        <p>ИНН: 9715413387</p>
+                        <p>ОГРН: 1217700080857</p>
+                    </div>
+                </div>
+
+                <!-- Колонка 2: Навигация -->
+                <div class="footer__col footer__col--nav">
+                    <ul class="footer__nav-list">
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Проекты</a></li>
+                        <li><a href="#">Услуги</a></li>
+                    </ul>
+                    <ul class="footer__nav-list">
+                        <li><a href="#">Цены</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <!-- Колонка 3: Контакты -->
+                <div class="footer__col footer__col--contacts">
+                    <a href="tel:+77777777777" class="footer__contact-item">
+                        <img src="images/Path 76.svg" alt="Телефон">
+                        +7 777 777 77 77
+                    </a>
+                    <a href="mailto:info@pinewoodhomes.ru" class="footer__contact-item">
+                        <img src="images/Mail.svg" alt="Почта">
+                        info@pinewoodhomes.ru
+                    </a>
+                    <div class="footer__contact-item align-top">
+                        <img src="images/Marker1.svg" alt="Адрес">
+                        <p>Владимирская обл.<br>г. Александров<br>ул. Ленина 13/7 БЦ Свечка,<br>оф. 211</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</div> <!-- Это закрывающий тег самого первого <div class="wrapper"> сайта, проверьте чтобы он был на месте -->
+
+    <!-- Подключение скриптов Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Наш скрипт -->
+    <script src="script.js"></script>
+</body>
+</html>
