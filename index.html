@@ -4,34 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pinewood Homes</title>
-    
-    <!-- Подключение шрифта Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Подключение стилей Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
-    <!-- Наши стили -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="wrapper">
-        <!-- Шапка сайта -->
+
         <header class="header">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <img src="images/logo.png" alt="Логотип Pinewood Homes">
             </a>
             
             <nav class="nav">
                 <ul class="nav__list">
-                    <li><a href="#" class="nav__link">Проекты</a></li>
-                    <li><a href="#" class="nav__link">Услуги</a></li>
-                    <li><a href="#" class="nav__link">Цены</a></li>
-                    <li><a href="#" class="nav__link">О нас</a></li>
-                    <li><a href="#" class="nav__link">Контакты</a></li>
+                    <li><a href="projects.html" class="nav__link">Проекты</a></li>
+                    <li><a href="services.html" class="nav__link">Услуги</a></li>
+                    <li><a href="prices.html" class="nav__link">Цены</a></li>
+                    <li><a href="about.html" class="nav__link">О нас</a></li>
+                    <li><a href="contacts.html" class="nav__link">Контакты</a></li>
                 </ul>
             </nav>
 
@@ -41,7 +35,6 @@
             </a>
         </header>
 
-        <!-- Главный экран -->
         <main class="hero">
             <div class="hero__content">
                 <h1 class="hero__title">
@@ -63,25 +56,20 @@
             </div>
 
             <div class="hero__slider-wrapper">
-                <!-- Swiper -->
                 <div class="swiper hero-swiper">
                     <div class="swiper-wrapper">
-                        <!-- Слайд 1 -->
                         <div class="swiper-slide">
                             <img src="images/swiper.png" alt="Интерьер деревянного дома">
                         </div>
-                        <!-- Слайд 2 (Для примера свайпа) -->
                         <div class="swiper-slide">
                             <img src="images/swiper.png" alt="Интерьер 2">
                         </div>
-                        <!-- Слайд 3 -->
                         <div class="swiper-slide">
                             <img src="images/swiper.png" alt="Интерьер 3">
                         </div>
                     </div>
                 </div>
                 
-                <!-- Кастомная кнопка навигации Swiper -->
                 <div class="swiper-button-next custom-next">
                     <img src="images/arrow-right.svg" alt="Стрелка вправо">
                 </div>
@@ -90,9 +78,7 @@
         </main>
     </div>
 
-    <!-- Секция: Процесс работы -->
     <section class="process">
-        <!-- Пустой тег для вашего SVG с деревьями -->
         <img src="images/Group.svg" alt="Фон деревья" class="process__bg-trees">
 
         <div class="wrapper">
@@ -108,7 +94,6 @@
             </div>
 
             <div class="process__grid">
-                <!-- Шаг 1 -->
                 <div class="process__item">
                     <span class="process__num">1</span>
                     <div class="process__text">
@@ -117,7 +102,6 @@
                     </div>
                 </div>
 
-                <!-- Шаг 2 -->
                 <div class="process__item">
                     <span class="process__num">2</span>
                     <div class="process__text">
@@ -126,7 +110,6 @@
                     </div>
                 </div>
 
-                <!-- Шаг 3 -->
                 <div class="process__item">
                     <span class="process__num">3</span>
                     <div class="process__text">
@@ -135,7 +118,6 @@
                     </div>
                 </div>
 
-                <!-- Шаг 4 -->
                 <div class="process__item">
                     <span class="process__num">4</span>
                     <div class="process__text">
@@ -144,7 +126,6 @@
                     </div>
                 </div>
 
-                <!-- Шаг 5 -->
                 <div class="process__item">
                     <span class="process__num">5</span>
                     <div class="process__text">
@@ -153,7 +134,6 @@
                     </div>
                 </div>
 
-                <!-- Шаг 6 -->
                 <div class="process__item">
                     <span class="process__num">6</span>
                     <div class="process__text">
@@ -165,11 +145,9 @@
         </div>
     </section>
 
-    <!-- Секция: Выполненные проекты -->
     <section class="projects">
         <div class="wrapper">
             
-            <!-- Шапка секции -->
             <div class="projects__header">
                 <h2 class="projects__title">
                     Более <span class="text-green">130 выполненных проектов</span><br>
@@ -182,13 +160,11 @@
                 </p>
             </div>
 
-            <!-- Слайдер проектов -->
             <div class="projects__slider-wrap">
                 
                 <div class="swiper projects-swiper">
                     <div class="swiper-wrapper">
                         
-                        <!-- Карточка 1 -->
                         <div class="swiper-slide">
                             <div class="project-card">
                                 <div class="project-card__img">
@@ -206,7 +182,6 @@
                             </div>
                         </div>
 
-                        <!-- Карточка 2 -->
                         <div class="swiper-slide">
                             <div class="project-card">
                                 <div class="project-card__img">
@@ -225,7 +200,7 @@
                             </div>
                         </div>
 
-                        <!-- Карточка 3 (Для демонстрации свайпа) -->
+
                         <div class="swiper-slide">
                             <div class="project-card">
                                 <div class="project-card__img">
@@ -246,7 +221,7 @@
                     </div>
                 </div>
 
-                <!-- Стрелки навигации для проектов -->
+
                 <div class="swiper-button-prev projects-prev">
                     <img src="images/arrow_forward_ios_24px.svg" alt="Влево">
                 </div>
@@ -256,7 +231,7 @@
 
             </div>
 
-            <!-- Кнопка под слайдером -->
+   
             <div class="projects__bottom">
                 <button class="btn btn-outline">Смотреть все проекты</button>
             </div>
@@ -264,12 +239,9 @@
         </div>
     </section>
 
-    <!-- Секция: Услуги -->
     <section class="services">
-        <!-- Пустой тег для фонового узора (линии слева внизу) -->
         
         <div class="wrapper">
-            <!-- Шапка секции -->
             <div class="services__header">
                 <h2 class="services__title">
                     Предоставляем <br>
@@ -282,12 +254,10 @@
                 </p>
             </div>
 
-            <!-- Слайдер услуг -->
             <div class="services__slider-wrap">
                 <div class="swiper services-swiper">
                     <div class="swiper-wrapper">
                         
-                        <!-- Карточка услуги 1 -->
                         <div class="swiper-slide">
                             <div class="service-card">
                                 <div class="service-card__img">
@@ -304,7 +274,6 @@
                             </div>
                         </div>
 
-                        <!-- Карточка услуги 2 -->
                         <div class="swiper-slide">
                             <div class="service-card">
                                 <div class="service-card__img">
@@ -321,7 +290,6 @@
                             </div>
                         </div>
 
-                        <!-- Карточка услуги 3 -->
                         <div class="swiper-slide">
                             <div class="service-card">
                                 <div class="service-card__img">
@@ -338,7 +306,6 @@
                             </div>
                         </div>
 
-                        <!-- Карточка услуги 4 -->
                         <div class="swiper-slide">
                             <div class="service-card">
                                 <div class="service-card__img">
@@ -355,7 +322,6 @@
                             </div>
                         </div>
 
-                        <!-- Карточка услуги 5 (Добавлена для наглядности скролла) -->
                         <div class="swiper-slide">
                             <div class="service-card">
                                 <div class="service-card__img">
@@ -375,7 +341,6 @@
                     </div>
                 </div>
 
-                <!-- Стрелки навигации -->
                 <div class="swiper-button-prev services-prev">
                     <img src="images/arrow_forward_ios_24px.svg" alt="Влево">
                 </div>
@@ -384,16 +349,14 @@
                 </div>
             </div>
 
-            <!-- Кнопка под слайдером (переиспользуем класс .btn-outline) -->
+
             <div class="services__bottom">
-                <button class="btn btn-outline">Смотреть все услуги</button>
+                <a href="services.html" class="btn btn-outline">Смотреть все услуги</a>
             </div>
         </div>
     </section>
 
-    <!-- Секция: Квиз (Опросник) -->
     <section class="quiz">
-        <!-- Фоновые SVG деревьев (абсолютное позиционирование) -->
         <img src="images/Frame1.svg" alt="Фон дерево лево" class="quiz__bg quiz__bg-left">
         <img src="images/Frame2.svg" alt="Фон дерево право" class="quiz__bg quiz__bg-right">
 
@@ -403,16 +366,13 @@
                 и получите расчеты по вашему объекту
             </h2>
 
-            <!-- Контейнер с обводкой -->
             <div class="quiz__box">
                 
-                <!-- ЛЕВАЯ ЧАСТЬ (Меняется) -->
                 <div class="quiz__main">
                     <p class="quiz__counter">Вопрос <span id="current-step">1</span> / 5</p>
 
                    <div class="quiz__steps-container">
                         
-                        <!-- ШАГ 1: Площадь -->
                         <div class="quiz__step active" data-step="1">
                             <h3 class="quiz__question">Укажите площадь дома:</h3>
                             <div class="quiz__step-content">
@@ -425,7 +385,6 @@
                             </div>
                         </div>
 
-                        <!-- ШАГ 2: Материал -->
                         <div class="quiz__step" data-step="2">
                             <h3 class="quiz__question">Укажите материал дома:</h3>
                             <div class="quiz__step-content">
@@ -472,7 +431,6 @@
                             </div>
                         </div>
 
-                        <!-- ШАГ 3: Смета (Да/Нет) -->
                         <div class="quiz__step" data-step="3">
                             <h3 class="quiz__question">Есть ли у вас смета на внутреннюю отделку?</h3>
                             <div class="quiz__step-content">
@@ -500,7 +458,6 @@
                             </div>
                         </div>
 
-                        <!-- ШАГ 4: Сроки -->
                         <div class="quiz__step" data-step="4">
                             <h3 class="quiz__question">Когда планируете начать работы по внутренней отделке?</h3>
                             <div class="quiz__step-content">
@@ -537,9 +494,7 @@
                             </div>
                         </div>
 
-                        <!-- ШАГ 5: Виды работ (Чекбоксы - можно выбрать много) -->
                         <div class="quiz__step" data-step="5">
-                            <!-- Исправил заголовок по смыслу контента -->
                             <h3 class="quiz__question">Какие работы необходимо выполнить?</h3>
                             <div class="quiz__step-content">
                                 <div class="quiz__grid-4">
@@ -592,7 +547,6 @@
                                             <span>Все работы «под ключ»</span>
                                         </div>
                                     </label>
-                                    <!-- Свой вариант для чекбоксов -->
                                     <div class="quiz__square-input">
                                         <input type="text" placeholder="Свой вариант" class="quiz__input quiz__input--wide">
                                     </div>
@@ -600,7 +554,6 @@
                             </div>
                         </div>
 
-                        <!-- ШАГ 6: Контакты (Lead Form) -->
                         <div class="quiz__step" data-step="contact">
                             <p class="quiz__lead-text">Остался последний шаг</p>
                             <h3 class="quiz__question">Получите оптимизацию сметы <br>и точный план всех работ</h3>
@@ -616,9 +569,8 @@
                             </div>
                         </div>
 
-                        <!-- ШАГ 7: Успех (Success) -->
                         <div class="quiz__step" data-step="success">
-                            <p class="quiz__lead-text">Остался последний шаг</p> <!-- Можно убрать, если не нужно на финале -->
+                            <p class="quiz__lead-text">Остался последний шаг</p> 
                             <h3 class="quiz__question">Спасибо!</h3>
                             <p class="quiz__success-desc">Наш менеджер свяжется с вами <br>в течении 15 минут</p>
                             
@@ -629,7 +581,6 @@
 
                     </div>
 
-                    <!-- Кнопки Навигации Квиза -->
                     <div class="quiz__actions">
                         <button class="quiz__btn quiz__btn--prev" id="btn-prev" disabled>
                             <img src="images/Arrow-back.svg" alt="Назад"> Назад
@@ -640,7 +591,6 @@
                     </div>
                 </div>
 
-                <!-- ПРАВАЯ ЧАСТЬ (Статичная) -->
                 <div class="quiz__sidebar">
                     <div class="expert">
                         <img src="images/Иван.png" alt="Иванов Борис" class="expert__photo">
@@ -676,12 +626,10 @@
         </div>
     </section>
 
-    <!-- Секция: Подвал (Footer) -->
     <footer class="footer">
         <div class="wrapper">
             <div class="footer__inner">
                 
-                <!-- Колонка 1: Логотип и Реквизиты -->
                 <div class="footer__col footer__col--brand">
                     <a href="#" class="logo footer__logo">
                         <img src="images/logo.png" alt="Логотип Pinewood Homes">
@@ -694,21 +642,19 @@
                     </div>
                 </div>
 
-                <!-- Колонка 2: Навигация -->
                 <div class="footer__col footer__col--nav">
                     <ul class="footer__nav-list">
                         <li><a href="#">Главная</a></li>
-                        <li><a href="#">Проекты</a></li>
-                        <li><a href="#">Услуги</a></li>
+                        <li><a href="projects.html">Проекты</a></li>
+                        <li><a href="services.html">Услуги</a></li>
                     </ul>
                     <ul class="footer__nav-list">
-                        <li><a href="#">Цены</a></li>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="prices.html">Цены</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
                     </ul>
                 </div>
 
-                <!-- Колонка 3: Контакты -->
                 <div class="footer__col footer__col--contacts">
                     <a href="tel:+77777777777" class="footer__contact-item">
                         <img src="images/Path 76.svg" alt="Телефон">
@@ -727,11 +673,9 @@
             </div>
         </div>
     </footer>
-</div> <!-- Это закрывающий тег самого первого <div class="wrapper"> сайта, проверьте чтобы он был на месте -->
+</div> 
 
-    <!-- Подключение скриптов Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Наш скрипт -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,139 +1,94 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ================= 1. ГЛАВНЫЙ СЛАЙДЕР (HERO) ================= //
-    const heroSwiper = new Swiper('.hero-swiper', {
-        loop: true, // Зацикленный слайдер
-        speed: 800, // Плавная смена слайдов
-        spaceBetween: 20, // Расстояние между слайдами
-        
-        // Кастомная кнопка "Вперед"
-        navigation: {
-            nextEl: '.custom-next',
-        },
-        
-        // Поддержка свайпа
-        grabCursor: true,
-    });
-
-
-    // ================= 2. СЛАЙДЕР ПРОЕКТОВ ================= //
-    const projectsSwiper = new Swiper('.projects-swiper', {
-        loop: true,
-        speed: 600,
-        grabCursor: true,
-        
-        // Кнопки навигации
-        navigation: {
-            nextEl: '.projects-next',
-            prevEl: '.projects-prev',
-        },
-
-        // Адаптивность
-        breakpoints: {
-            320: { // Телефоны
-                slidesPerView: 1,
-                spaceBetween: 20
+    if (document.querySelector('.hero-swiper')) {
+        const heroSwiper = new Swiper('.hero-swiper', {
+            loop: true,
+            speed: 800,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.custom-next',
             },
-            768: { // Планшеты и ПК
-                slidesPerView: 2,
-                spaceBetween: 30
+            grabCursor: true,
+        });
+    }
+
+    if (document.querySelector('.projects-swiper')) {
+        const projectsSwiper = new Swiper('.projects-swiper', {
+            loop: true,
+            speed: 600,
+            grabCursor: true,
+            navigation: {
+                nextEl: '.projects-next',
+                prevEl: '.projects-prev',
+            },
+            breakpoints: {
+                320: { slidesPerView: 1, spaceBetween: 20 },
+                768: { slidesPerView: 2, spaceBetween: 30 }
             }
-        }
-    });
+        });
+    }
 
-
-    // ================= 3. СЛАЙДЕР УСЛУГ ================= //
-    const servicesSwiper = new Swiper('.services-swiper', {
-        loop: true,
-        speed: 600,
-        grabCursor: true,
-        
-        navigation: {
-            nextEl: '.services-next',
-            prevEl: '.services-prev',
-        },
-
-        // Адаптивность под 4 колонки
-        breakpoints: {
-            320: { // Мобильные
-                slidesPerView: 1,
-                spaceBetween: 15
+    if (document.querySelector('.services-swiper')) {
+        const servicesSwiper = new Swiper('.services-swiper', {
+            loop: true,
+            speed: 600,
+            grabCursor: true,
+            navigation: {
+                nextEl: '.services-next',
+                prevEl: '.services-prev',
             },
-            576: { // Большие телефоны
-                slidesPerView: 2,
-                spaceBetween: 20
-            },
-            992: { // Планшеты
-                slidesPerView: 3,
-                spaceBetween: 20
-            },
-            1200: { // Десктопы
-                slidesPerView: 4,
-                spaceBetween: 20
+            breakpoints: {
+                320: { slidesPerView: 1, spaceBetween: 15 },
+                576: { slidesPerView: 2, spaceBetween: 20 },
+                992: { slidesPerView: 3, spaceBetween: 20 },
+                1200: { slidesPerView: 4, spaceBetween: 20 }
             }
-        }
-    });
+        });
+    }
 
-
-    // ================= 4. ЛОГИКА КВИЗА (ОПРОСНИК) ================= //
     const quizSteps = document.querySelectorAll('.quiz__step');
     const btnNext = document.getElementById('btn-next');
     const btnPrev = document.getElementById('btn-prev');
     const stepCounter = document.getElementById('current-step');
-    const quizActions = document.querySelector('.quiz__actions'); // Блок с кнопками Назад/Далее
-    
-    // Кнопки внутри финальных шагов
+    const quizActions = document.querySelector('.quiz__actions');
     const btnSubmit = document.getElementById('quiz-submit');
     const btnReset = document.getElementById('quiz-reset');
 
+
     if (quizSteps.length > 0) {
-        // Массив порядка шагов: 1 -> 2 -> 3 -> 4 -> 5 -> contact -> success
         const stepsOrder = ['1', '2', '3', '4', '5', 'contact', 'success'];
-        let currentIndex = 0; // Начинаем с первого шага (индекс 0)
+        let currentIndex = 0;
 
         function updateQuizUI() {
             const currentStepName = stepsOrder[currentIndex];
 
-            // 1. Скрываем все шаги
             quizSteps.forEach(step => step.classList.remove('active'));
             
-            // 2. Показываем текущий шаг
             const activeStep = document.querySelector(`.quiz__step[data-step="${currentStepName}"]`);
             if (activeStep) activeStep.classList.add('active');
             
-            // 3. Обновляем счетчик (только если это шаги с цифрами 1-5)
             if (stepCounter) {
                 if (currentIndex < 5) {
-                    stepCounter.parentElement.style.display = 'block'; // Показываем "Вопрос X/5"
+                    stepCounter.parentElement.style.display = 'block';
                     stepCounter.textContent = currentIndex + 1;
                 } else {
-                    stepCounter.parentElement.style.display = 'none'; // Скрываем на финале
+                    stepCounter.parentElement.style.display = 'none';
                 }
             }
             
-            // 4. Управление нижней панелью кнопок (Назад/Далее)
             if (currentStepName === 'contact' || currentStepName === 'success') {
-                // Скрываем стандартные кнопки на шаге контактов и успеха
                 if(quizActions) quizActions.style.display = 'none';
             } else {
-                // Показываем на обычных шагах
                 if(quizActions) quizActions.style.display = 'flex';
-                
-                // Состояние кнопки НАЗАД
                 if (currentIndex === 0) {
                     btnPrev.disabled = true;
                 } else {
                     btnPrev.disabled = false;
                 }
-
-                // Текст кнопки ДАЛЕЕ
                 btnNext.innerHTML = 'Далее <img src="" alt="Вперед">';
             }
         }
 
-        // --- Обработчики событий ---
-
-        // Стандартная кнопка "Далее"
         if (btnNext) {
             btnNext.addEventListener('click', () => {
                 if (currentIndex < stepsOrder.length - 1) {
@@ -143,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Стандартная кнопка "Назад"
         if (btnPrev) {
             btnPrev.addEventListener('click', () => {
                 if (currentIndex > 0) {
@@ -153,12 +107,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Кнопка "Получить расчет" (на шаге контактов)
         if (btnSubmit) {
             btnSubmit.addEventListener('click', (e) => {
                 e.preventDefault();
-                // Здесь можно добавить проверку валидации формы
-                // Переходим на шаг Success
                 const successIndex = stepsOrder.indexOf('success');
                 if (successIndex !== -1) {
                     currentIndex = successIndex;
@@ -167,21 +118,97 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Кнопка "Начать с начала"
         if (btnReset) {
             btnReset.addEventListener('click', () => {
-                currentIndex = 0; // Сброс на 1 шаг
-                
-                // Сброс всех инпутов (по желанию)
+                currentIndex = 0;
                 document.querySelectorAll('.quiz__input').forEach(input => input.value = '');
                 document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => input.checked = false);
-                
                 updateQuizUI();
             });
         }
         
-        // Запуск
         updateQuizUI();
     }
 
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const projectsGrid = document.getElementById('projects-grid');
+
+    if (loadMoreBtn && projectsGrid) {
+        loadMoreBtn.addEventListener('click', function() {
+            const newCardsHTML = `
+                <article class="project-card fade-in">
+                    <div class="project-card__img"><img src="images/project-img1.png" alt="Новый проект 1"></div>
+                    <div class="project-card__content">
+                        <div class="project-card__info"><p>КП Новые Просторы 150</p></div>
+                        <a href="#" class="project-card__btn">Смотреть проект<img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка"></a>
+                    </div>
+                </article>
+                <article class="project-card fade-in">
+                    <div class="project-card__img"><img src="images/project-img2.png" alt="Новый проект 2"></div>
+                    <div class="project-card__content">
+                        <div class="project-card__info"><p>Дом в лесу 320</p></div>
+                        <a href="#" class="project-card__btn">Смотреть проект <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка"></a>
+                    </div>
+                </article>
+                <article class="project-card fade-in">
+                    <div class="project-card__img"><img src="images/project-img3.png" alt="Новый проект 3"></div>
+                    <div class="project-card__content">
+                        <div class="project-card__info"><p>КП Солнечный берег</p></div>
+                        <a href="#" class="project-card__btn">Смотреть проект <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка"></a>
+                    </div>
+                </article>
+                <article class="project-card fade-in">
+                    <div class="project-card__img"><img src="images/project-img4.png" alt="Новый проект 4"></div>
+                    <div class="project-card__content">
+                        <div class="project-card__info"><p>Баня из сруба</p></div>
+                        <a href="#" class="project-card__btn">Смотреть проект <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка"></a>
+                    </div>
+                </article>
+            `;
+            projectsGrid.insertAdjacentHTML('beforeend', newCardsHTML);
+        });
+    }
+
+    const loadMoreServicesBtn = document.getElementById('load-more-services-btn');
+    const servicesGrid = document.getElementById('services-grid');
+
+    if (loadMoreServicesBtn && servicesGrid) {
+        loadMoreServicesBtn.addEventListener('click', function() {
+            const newServicesHTML = `
+                <article class="service-card fade-in">
+                    <div class="service-card__img"><img src="images/swiper3.png" alt="Доп. услуга 1"></div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__title">Дизайн интерьера</h3>
+                        <p class="service-card__desc">Разработка полного дизайн-проекта с визуализацией</p>
+                        <a href="#" class="service-card__btn">Оставить заявку<img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка"></a>
+                    </div>
+                </article>
+                <article class="service-card fade-in">
+                    <div class="service-card__img"><img src="images/swiper3.png" alt="Доп. услуга 2"></div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__title">Ландшафтный дизайн</h3>
+                        <p class="service-card__desc">Благоустройство территории вокруг дома</p>
+                        <a href="#" class="service-card__btn">Оставить заявку <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка"></a>
+                    </div>
+                </article>
+                <article class="service-card fade-in">
+                    <div class="service-card__img"><img src="images/swiper3.png" alt="Доп. услуга 3"></div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__title">Установка заборов</h3>
+                        <p class="service-card__desc">Монтаж ограждений любого типа под ключ</p>
+                        <a href="#" class="service-card__btn">Оставить заявку <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка"></a>
+                    </div>
+                </article>
+                <article class="service-card fade-in">
+                    <div class="service-card__img"><img src="images/swiper3.png" alt="Доп. услуга 4"></div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__title">Сервисное обслуживание</h3>
+                        <p class="service-card__desc">Сезонный уход за деревянным домом</p>
+                        <a href="#" class="service-card__btn">Оставить заявку <img src="images/Icon ionic-md-arrow-forward.svg" alt="Стрелка"></a>
+                    </div>
+                </article>
+            `;
+            servicesGrid.insertAdjacentHTML('beforeend', newServicesHTML);
+        });
+    }
 });

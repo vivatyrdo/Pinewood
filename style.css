@@ -1522,3 +1522,762 @@ ul {
         gap: 20px;
     }
 }
+
+/* ================= СТРАНИЦА: ПРОЕКТЫ (PROJECTS.HTML) ================= */
+
+.projects-page {
+    padding: 40px 0 80px 0;
+}
+
+/* Заголовок по центру */
+.projects-page__title {
+    text-align: center;
+    font-size: clamp(32px, 5vw, 42px);
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 50px;
+}
+
+/* Сетка проектов */
+.projects-page__grid {
+    display: grid;
+    /* 2 колонки равной ширины */
+    grid-template-columns: repeat(2, 1fr); 
+    /* Расстояния между карточками как на макете */
+    gap: 40px; 
+    margin-bottom: 60px;
+}
+
+/* Кнопка "Загрузить еще" по центру */
+.projects-page__actions {
+    display: flex;
+    justify-content: center;
+}
+
+/* --- Адаптив для страницы проектов --- */
+
+@media (max-width: 768px) {
+    .projects-page__grid {
+        /* На планшетах и телефонах - 1 колонка */
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .projects-page__title {
+        margin-bottom: 30px;
+    }
+}
+
+/* Анимация появления для новых карточек */
+.fade-in {
+    animation: fadeInCard 0.5s ease forwards;
+    opacity: 0; /* Начальное состояние - невидимое */
+}
+
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Выезжают снизу */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= СТРАНИЦА: УСЛУГИ (SERVICES.HTML) ================= */
+
+.services-page {
+    padding: 40px 0 80px 0;
+}
+
+/* Сетка услуг (4 колонки) */
+.services-page__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки как на макете */
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+/* Адаптив для страницы услуг */
+@media (max-width: 1200px) {
+    .services-page__grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки на ноутбуках */
+    }
+}
+
+@media (max-width: 900px) {
+    .services-page__grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+    }
+}
+
+@media (max-width: 576px) {
+    .services-page__grid {
+        grid-template-columns: 1fr; /* 1 колонка на телефонах */
+    }
+}
+
+/* ================= СТРАНИЦА: ЦЕНЫ (PRICES.HTML) ================= */
+
+.prices-page {
+    padding: 40px 0 80px 0;
+}
+
+.prices-page__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на ПК */
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* Карточка цены */
+.price-card {
+    position: relative; /* Чтобы позиционировать фон */
+    border: 1px solid var(--text-green);
+    border-radius: 20px;
+    padding: 40px;
+    background-color: var(--bg-color);
+    overflow: hidden; /* Чтобы фон не вылезал за границы */
+    height: 100%;
+}
+
+/* Фоновый узор внутри карточки */
+.price-card__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.1; /* Еле заметный, как на макете */
+    pointer-events: none;
+    z-index: 0;
+}
+
+.price-card__content {
+    position: relative;
+    z-index: 1; /* Контент поверх фона */
+}
+
+.price-card__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #5d5d5d;
+    margin-bottom: 30px;
+}
+
+/* Список цен */
+.price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Выравнивание по нижней линии текста */
+    font-size: 13px;
+    color: #444;
+    gap: 20px;
+}
+
+.price-item__name {
+    color: #666;
+    max-width: 70%;
+}
+
+.price-item__cost {
+    font-weight: 600;
+    white-space: nowrap; /* Цена не переносится */
+    color: var(--text-main);
+}
+
+/* Кнопка в карточке (похожа на service-card__btn) */
+.price-card__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #8CA488;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 14px 30px;
+    border-radius: 30px;
+    transition: background-color 0.2s ease;
+    text-transform: uppercase;
+}
+
+.price-card__btn:hover {
+    background-color: #718c6e;
+}
+
+.price-card__btn img {
+    width: 14px;
+    height: 14px;
+}
+
+/* Адаптив для цен */
+@media (max-width: 992px) {
+    .prices-page__grid {
+        grid-template-columns: 1fr; /* 1 колонка на планшетах и ниже */
+        gap: 20px;
+    }
+    
+    .price-card {
+        padding: 30px 20px;
+    }
+}
+
+/* ================= СТРАНИЦА: О НАС (ABOUT.HTML) ================= */
+
+.about-page {
+    padding-bottom: 80px;
+}
+
+/* --- HERO SECTION --- */
+.about-hero {
+    position: relative;
+    padding: 60px 0 100px 0;
+}
+
+/* Фон с кольцами дерева */
+.about-hero__bg {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 60%;
+    height: 140%;
+    object-fit: contain;
+    opacity: 0.1; /* Прозрачность узора */
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about-hero__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Левая часть (Текст) */
+.about-hero__content {
+    flex: 0 0 45%;
+    max-width: 550px;
+}
+
+.about-hero__title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-bottom: 40px;
+}
+
+.about-hero__text p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.about-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Модификатор для кнопки, чтобы сделать текст капсом, как на макете */
+.btn-outline--caps {
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 20px 30px;
+}
+
+/* Правая часть (Фото) */
+.about-hero__image-wrap {
+    flex: 0 0 50%;
+    position: relative;
+}
+
+.about-hero__img {
+    width: 100%;
+    height: auto;
+    border-radius: 40px 10px 40px 10px; /* Скругление углов: левый-верх, правый-верх, правый-низ, левый-низ */
+    border: 2px solid var(--text-green);
+    background-color: #dcdcdc; /* Заглушка */
+    display: block;
+}
+
+/* --- TEAM SECTION (КОМАНДА) --- */
+.team-section {
+    padding-top: 50px;
+}
+
+.team-section__title {
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 700;
+    margin-bottom: 50px;
+    line-height: 1.2;
+}
+
+/* Сетка команды */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+    gap: 25px;
+}
+
+/* Карточка сотрудника */
+.team-card {
+    border: 1px solid var(--text-green);
+    border-radius: 20px;
+    padding: 10px; /* Отступ внутри карточки до картинки */
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.team-card__photo {
+    width: 100%;
+    height: 320px; /* Высота фото */
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.team-card__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #dcdcdc;
+}
+
+.team-card__info {
+    padding: 0 10px 15px 10px;
+}
+
+.team-card__name {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.team-card__role {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.4;
+}
+
+
+/* --- АДАПТИВНОСТЬ О НАС --- */
+
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    }
+}
+
+@media (max-width: 900px) {
+    .about-hero__container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .about-hero__content, 
+    .about-hero__image-wrap {
+        flex: auto;
+        max-width: 100%;
+        width: 100%;
+    }
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    }
+}
+
+@media (max-width: 576px) {
+    .about-hero__actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn {
+        width: 100%;
+    }
+    .team-grid {
+        grid-template-columns: 1fr; /* 1 колонка */
+    }
+    .team-card__photo {
+        height: 280px;
+    }
+}
+
+/* ================= СЕКЦИЯ: ВИДЕОКЕЙСЫ ================= */
+.videos-section {
+    padding: 60px 0;
+}
+
+.videos-section__title {
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    color: var(--text-main);
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 видео в ряд */
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.video-card {
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #EBEBEB; /* Цвет подложки как на макете */
+    border: 1px solid #8ca488; /* Тонкая зеленая рамка */
+}
+
+.video-card__preview {
+    position: relative;
+    width: 100%;
+    height: 350px; /* Фиксированная высота видео */
+    background-color: #dcdcdc;
+}
+
+.video-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Кнопка Play по центру */
+.video-card__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3); /* Полупрозрачный круг */
+    backdrop-filter: blur(5px);
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.video-card__play:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-card__play img {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px; /* Визуальная компенсация треугольника play */
+}
+
+.video-card__footer {
+    padding: 20px 25px;
+}
+
+.video-card__footer p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+}
+
+.section-actions {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ================= СЕКЦИЯ: ГАЛЕРЕЯ ================= */
+.gallery-section {
+    padding: 60px 0 100px 0;
+}
+
+.gallery-section__title {
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 50px;
+    color: var(--text-main);
+}
+
+/* Обертка для колонок галереи */
+.gallery-wrapper {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+/* Колонка галереи */
+.gallery-col {
+    flex: 1; /* Все колонки равной ширины */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gallery-item {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background-color: #dcdcdc;
+}
+
+/* Высота картинок для Masonry эффекта (как на скрине) */
+.gallery-item--tall {
+    height: 420px;
+}
+
+.gallery-item--short {
+    height: 260px;
+}
+
+
+/* ================= АДАПТИВНОСТЬ НОВЫХ СЕКЦИЙ ================= */
+
+/* Планшеты (меньше 992px) */
+@media (max-width: 992px) {
+    .video-card__preview {
+        height: 280px;
+    }
+    .gallery-item--tall {
+        height: 350px;
+    }
+    .gallery-item--short {
+        height: 220px;
+    }
+}
+
+/* Мобильные (меньше 768px) */
+@media (max-width: 768px) {
+    /* Видео становятся в 1 колонку */
+    .videos-grid {
+        grid-template-columns: 1fr; 
+    }
+    .video-card__preview {
+        height: 240px;
+    }
+}
+
+/* Маленькие экраны (меньше 576px) - ТРЕБОВАНИЕ ПО ГАЛЕРЕЕ */
+@media (max-width: 576px) {
+    .gallery-wrapper {
+        flex-wrap: wrap; /* Разрешаем перенос колонок */
+    }
+    
+    .gallery-col {
+        /* Делаем ширину почти 50%, минус половина отступа */
+        flex: 0 0 calc(50% - 10px); 
+    }
+    
+    /* Третья колонка растянется или встанет под первой, 
+       чтобы сохранить структуру 2-х столбцов */
+    .gallery-col:last-child {
+        flex: 1 0 100%; /* Или можно сделать 100% ширины для последней */
+        flex-direction: row; /* И внутри расположить картинки горизонтально */
+    }
+    
+    /* Опционально: на совсем узких экранах уменьшаем высоту */
+    .gallery-item--tall {
+        height: 280px;
+    }
+    .gallery-item--short {
+        height: 180px;
+    }
+}
+
+/* ================= СТРАНИЦА: КОНТАКТЫ (CONTACTS.HTML) ================= */
+
+.contacts-page {
+    position: relative; /* Для позиционирования фона */
+    padding: 40px 0 100px 0;
+}
+
+/* Фон деревья */
+.contacts-bg {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1400px; /* Ограничиваем ширину фона, чтобы не растягивался на 4к экранах */
+    height: auto;
+    opacity: 0.5; /* Полупрозрачность, если картинка яркая */
+    pointer-events: none;
+    z-index: 0;
+    object-fit: cover;
+}
+
+/* Контент должен быть выше фона */
+.contacts-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Сетка контактов */
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    gap: 30px;
+    margin: 60px 0 80px 0;
+    text-align: center;
+}
+
+.contacts-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts-item__icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts-item__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contacts-item__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.contacts-item__desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    min-height: 42px; /* Чтобы кнопки были на одном уровне, если текста мало */
+}
+
+/* Ссылки (телефон/почта) */
+.contacts-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-green);
+    transition: color 0.2s;
+}
+
+.contacts-link:hover {
+    color: #5f755b;
+}
+
+.contacts-link img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Кнопка "Заказать звонок" */
+.contacts-btn {
+    padding: 14px 30px;
+    font-size: 13px;
+    background-color: transparent;
+    border-color: #999;
+}
+
+.contacts-btn:hover {
+    background-color: #fff;
+    border-color: var(--text-green);
+}
+
+/* Адрес перед картой */
+.contacts-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-left: 20px; /* Небольшой отступ слева, как на макете */
+}
+
+.contacts-address__icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.contacts-address__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contacts-address__text {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+/* Карта */
+.contacts-map {
+    width: 100%;
+    height: 450px;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #dcdcdc; /* Заглушка */
+}
+
+.contacts-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- АДАПТИВНОСТЬ КОНТАКТОВ --- */
+
+@media (max-width: 900px) {
+    .contacts-grid {
+        grid-template-columns: 1fr; /* 1 колонка на планшетах и телефонах */
+        gap: 50px;
+        margin: 40px 0 60px 0;
+    }
+    
+    .contacts-item__desc {
+        min-height: auto; /* Убираем фикс высоты */
+    }
+    
+    .contacts-address {
+        padding-left: 0;
+    }
+    
+    .contacts-map {
+        height: 300px;
+        border-radius: 20px;
+    }
+}
